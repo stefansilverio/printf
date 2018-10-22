@@ -1,4 +1,3 @@
-#include <stdio.h> /* for testing only */
 #include <stdarg.h> /* va_list, va_start, va_arg, va_end macros */
 #include <stdlib.h> /* NULL macro */
 #include "holberton.h" /* _putchar */
@@ -77,26 +76,3 @@ int _printf(const char *format, ...)
 	return (count);
 }
 
-/* TODO: REMOVE BEFORE PUSHING TO MASTER! */
-/**
- * main - tests _printf against stdio::printf
- * Return: 0 on SUCCESS
- */
-int main(void)
-{
-	int a, b;
-
-	a = printf("a\n");
-	b = _printf("a\n");
-	printf("(%d, %d)\n", a, b);
-
-	a = printf("%c\n", 'A');
-	b = _printf("%c\n", 'A');
-	printf("(%d, %d)\n", a, b);
-
-	a = printf("%s\n", "Holberton");
-	b = _printf("%s\n", "Holberton");
-	printf("(%d, %d)\n", a, b);
-
-	return (0);
-}
