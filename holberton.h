@@ -9,7 +9,7 @@
 typedef struct printer
 {
 	char *spec;
-	int (*fn) (va_list);
+	int (*fn)(va_list);
 } print_t;
 
 
