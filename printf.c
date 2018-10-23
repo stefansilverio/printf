@@ -3,33 +3,6 @@
 #include "holberton.h" /* _putchar */
 
 /**
- * print_char - prints a char parameter from a va_list
- * @ap: va_list from calling function
- * Return: integer count of characters printed
- */
-int print_char(va_list ap)
-{
-	return (_putchar(va_arg(ap, int)));
-}
-
-/**
- * print_string - prints a string parameter from a va_list
- * @ap: va_list from calling function
- * Return: integer count of characters printed
- */
-int print_string(va_list ap)
-{
-	char *str = va_arg(ap, char *);
-	int count = 0;
-
-	while (str[count] != '\0')
-		count += _putchar(str[count]);
-
-	return (count);
-}
-
-
-/**
  * _printf - prints to stdout according to a format string
  * @format: constant string containing zero or more directives
  * Return: int number of characters printed (excluding terminating null-byte)
@@ -59,14 +32,7 @@ int _printf(const char *format, ...)
 			break;
 		case 'c':
 		case 's':
-			for (j = 0; funcs[j].spec != NULL; j++)
-			{
-				if (format[i] == funcs[j].spec[0])
-				{
-					count += funcs[j].fn(ap);
-					break;
-				}
-			}
+			count += call_print_fn(format[i], funcs, ap);
 			break;
 		default:
 			if (format[i] >= 7 && format[i] <= 13)
@@ -81,4 +47,3 @@ int _printf(const char *format, ...)
 	va_end(ap);
 	return (count);
 }
-
