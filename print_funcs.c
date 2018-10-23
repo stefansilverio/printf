@@ -22,6 +22,8 @@ int print_string(va_list ap)
 	char *str = va_arg(ap, char *);
 	int count = 0;
 
+	if (!str)
+		str = "(null)";
 	while (str[count] != '\0')
 		count += _putchar(str[count]);
 
