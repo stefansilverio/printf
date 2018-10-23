@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 #include "../holberton.h"
 
 /**
@@ -10,8 +11,8 @@ int main(void)
 	int a = 0;
 	int b = 0;
 
-	a = printf("stdio%");
-	b = _printf("ours%");
+	a = printf("stdio %u\n", UINT_MAX);
+	b = _printf("ours %u\n", UINT_MAX);
 /*	printf("%d", a);*/
 	printf("(%d, %d)\n", a, b);
 
