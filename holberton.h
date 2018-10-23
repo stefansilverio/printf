@@ -18,7 +18,9 @@ int _printf(const char *format, ...);
 int print_char(va_list ap);
 int print_string(va_list ap);
 int print_int(va_list ap);
+int print_unsigned(va_list ap);
 int print_digit(int num, int *count);
+int print_digit_unsigned(unsigned int num, int *count);
 int call_print_fn(char ch, print_t funcs[], va_list ap);
 
 #endif
