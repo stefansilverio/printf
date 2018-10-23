@@ -11,8 +11,8 @@ int main(void)
 	int a = 0;
 	int b = 0;
 
-	a = printf("stdio %u\n", UINT_MAX);
-	b = _printf("ours %u\n", UINT_MAX);
+	a = printf("stdio %d\n", INT_MIN);
+	b = _printf("ours %d\n", INT_MIN);
 /*	printf("%d", a);*/
 	printf("(%d, %d)\n", a, b);
 

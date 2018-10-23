@@ -1,5 +1,6 @@
 #include <stdarg.h> /* va_list, va_start, va_arg, va_end macros */
 #include <stdlib.h> /* NULL macro */
+#include <limits.h>
 #include "holberton.h" /* _putchar */
 
 /**
@@ -63,14 +64,24 @@ int print_digit(int num, int *count)
 {
 	if (num < 0)
 	{
-		(*count) += _putchar('-');
-		num = -num;
-	} /* TODO handle int min & max */
-
-	if (num / 10)
-	{
-		print_digit(num / 10, count);
+		if (num == INT_MIN)
+		{
+			(*count) += _putchar('-');
+			num++;
+			num = -num;
+			if (num / 10)
+				print_digit(num / 10, count);
+			(*count) += _putchar((num % 10) + 1 + '0');
+			return (*count);
+		}
+		else
+		{
+			(*count) += _putchar('-');
+			num = -num;
+		}
 	}
+	if (num / 10)
+		print_digit(num / 10, count);
 
 	(*count) += _putchar((num % 10) + '0');
 	return (*count);
@@ -108,9 +119,8 @@ int print_unsigned(va_list ap)
 int print_digit_unsigned(unsigned int num, int *count)
 {
 	if (num / 10)
-	{
 		print_digit_unsigned(num / 10, count);
-	}
+
 
 	(*count) += _putchar((num % 10) + '0');
 	return (*count);
