@@ -14,9 +14,10 @@ int _printf(const char *format, ...)
 	print_t funcs[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"d", print_int},
+		{"i", print_int},
 		{NULL, NULL}
 	};
-
 	va_start(ap, format);
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
 	{
@@ -32,6 +33,8 @@ int _printf(const char *format, ...)
 			break;
 		case 'c':
 		case 's':
+		case 'd':
+		case 'i':
 			count += call_print_fn(format[i], funcs, ap);
 			break;
 		default:
