@@ -9,7 +9,7 @@
  * @va_list: object to be printed
  * Return: number of characters printed
  */
-int call_print_func(char ch, print_t funcs, va_list ap)
+int call_print_fn(char ch, print_t funcs[], va_list ap)
 {
 	int j;
 	int count = 0;
