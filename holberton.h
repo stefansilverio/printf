@@ -17,5 +17,6 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list ap);
 int print_string(va_list ap);
+int call_print_fn(char ch, print_t funcs[], va_list ap);
 
 #endif
