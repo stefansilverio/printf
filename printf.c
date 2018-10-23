@@ -9,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, j, count = 0;
+	int i, count = 0;
 	va_list ap;
 	print_t funcs[] = {
 		{"c", print_char},
