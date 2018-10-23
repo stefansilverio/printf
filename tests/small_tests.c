@@ -7,19 +7,21 @@
  */
 int main(void)
 {
-	int a, b;
+	int a = 0;
+	int b = 0;
 
-	a = printf("a\n");
-	b = _printf("a\n");
+	a = printf("stdio%");
+	b = _printf("ours%");
+/*	printf("%d", a);*/
 	printf("(%d, %d)\n", a, b);
 
-	a = printf("%c\n", 'A');
-	b = _printf("%c\n", 'A');
+/*	a = printf("stdio %c\n", '\0');
+	b = _printf("ours %c\n", '\0');
 	printf("(%d, %d)\n", a, b);
 
-	a = printf("%s\n", "Holberton");
-	b = _printf("%s\n", "Holberton");
+	a = printf("stdio %s\n", "Holberton");
+	b = _printf("ours %s\n", "Holberton");
 	printf("(%d, %d)\n", a, b);
-
+*/
 	return (0);
 }
