@@ -3,10 +3,10 @@
 #include "holberton.h"
 
 /**
- * call_print_func - call appropriate print fn
- * @format: format string character
+ * call_print_fn - call appropriate print fn
+ * @ch: format string character
  * @funcs: arrays of structures and functions
- * @va_list: object to be printed
+ * @ap: object to be printed
  * Return: number of characters printed
  */
 int call_print_fn(char ch, print_t funcs[], va_list ap)
