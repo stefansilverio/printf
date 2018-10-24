@@ -1,5 +1,3 @@
-#include <stdarg.h> /* va_list, va_start, va_arg, va_end macros */
-#include <stdlib.h> /* NULL macro */
 #include "holberton.h" /* _putchar */
 
 /**
@@ -17,6 +15,7 @@ int _printf(const char *format, ...)
 		{"d", print_int},
 		{"i", print_int},
 		{"u", print_unsigned},
+		{"o", print_octal},
 		{NULL, NULL}
 	};
 	va_start(ap, format);
@@ -37,6 +36,7 @@ int _printf(const char *format, ...)
 		case 'd':
 		case 'i':
 		case 'u':
+		case 'o':
 			count += call_print_fn(format[i], funcs, ap);
 			break;
 		default:
