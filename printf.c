@@ -40,6 +40,12 @@ int _printf(const char *format, ...)
 			count += call_print_fn(format[i], funcs, ap);
 			break;
 		default:
+			if (!format[i])
+				return (-1);
+			count += _putchar('%');
+			count += _putchar(format[i]);
+			break;
+/*		default:
 			if (format[i] >= 7 && format[i] <= 13)
 			{
 				count += _putchar('%');
@@ -47,7 +53,7 @@ int _printf(const char *format, ...)
 				break;
 			}
 			return (-1);
-		}
+*/		}
 	}
 	va_end(ap);
 	return (count);
