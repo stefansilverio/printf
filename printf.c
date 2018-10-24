@@ -30,6 +30,7 @@ int _printf(const char *format, ...)
 		case 'i':
 		case 'u':
 		case 'o':
+		case ' ':
 			count += call_print_fn(format[i], ap);
 			break;
 		default:
