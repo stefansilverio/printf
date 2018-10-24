@@ -1,0 +1,35 @@
+.\" Manpage for _printf.
+.TH man 8 "23 October 2018" "1.0" "_printf man page"
+.SH NAME
+_printf - format and print data
+.SH SYNOPSIS
+#include "holberton.h"
+#include <stdarg.h>
+#include <stdlib.h>
+
+.SH DESCRIPTION
+_printf does something jada jada jada.
+
+_printf function prototype:
+int _printf(const char *format, ...)
+
+.SS Return value
+On success, _printf returns the number of characters
+printed (excluding the terminating null-byte).
+On failure, _printf returns -1.
+
+.SS The format string
+
+.SS The conversion specifiers
+
+.SS The flag characters
+
+.SH EXAMPLES
+???
+
+.SH SEE ALSO
+printf , scanf
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Fernando Gonzalez-Morales and Stefan Silverio
