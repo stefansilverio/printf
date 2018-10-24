@@ -18,5 +18,14 @@ int _printf(const char *format, ...);
 | u | Unsigned decimal integer |
 | o | Unsigned octal |
 
+#### Compilation and testing
+
+We compiled via:
+```
+$ gcc -Wall -Werror -Wextra -pedantic *.c
+```
+
+We also have some tests in the `tests` folder. Feel free to suggest more.
+
 ## Authors
 `Fernando González-Morales, Stefan Silverio`
