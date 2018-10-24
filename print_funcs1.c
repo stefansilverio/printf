@@ -42,7 +42,7 @@ int print_digit(int num, int *count)
 			num = -num;
 			if (num / 10)
 				print_digit(num / 10, count);
-			(*count) += write(1, (num % 10) + 1 + '0', 1);
+			(*count) += write(1, &((num % 10) + 1 + '0'), 1);
 			return (*count);
 		}
 		else
@@ -54,6 +54,6 @@ int print_digit(int num, int *count)
 	if (num / 10)
 		print_digit(num / 10, count);
 
-	(*count) += write(1, (num % 10) + '0', 1);
+	(*count) += write(1, &((num % 10) + '0'), 1);
 	return (*count);
 }

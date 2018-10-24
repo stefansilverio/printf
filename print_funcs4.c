@@ -36,7 +36,7 @@ int print_unsigned_digit(unsigned int num, int *count)
 	if (num / 10)
 		print_unsigned_digit(num / 10, count);
 
-	(*count) += write(1, (num % 10) + '0', 1);
+	(*count) += write(1, &((num % 10) + '0'), 1);
 	return (*count);
 }
 
@@ -75,6 +75,6 @@ int print_digit_octal(unsigned int num, int *count)
 	if (num / 8)
 		print_digit_octal(num / 8, count);
 
-	(*count) += write(1, (num % 8) + '0', 1);
+	(*count) += write(1, &((num % 8) + '0'), 1);
 	return (*count);
 }
