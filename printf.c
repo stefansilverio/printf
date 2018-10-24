@@ -12,7 +12,11 @@ int _printf(const char *format, ...)
 	va_list ap;
 
 	va_start(ap, format);
-	for (i = 0; format != NULL && format[i] != '\0'; i++)
+
+	if (format == NULL)
+		return (-1);
+
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
 		{
@@ -40,8 +44,6 @@ int _printf(const char *format, ...)
 			break;
 		}
 	}
-	if (format == NULL)
-		return (-1);
 	va_end(ap);
 	return (count);
 }
