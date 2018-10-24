@@ -1,5 +1,4 @@
-#include <stdarg.h>
-#include <unistd.h>
+#include "holberton.h"
 
 /**
  * print_char - prints a char parameter from a va_list
@@ -8,7 +7,7 @@
  */
 int print_char(va_list ap)
 {
-	return (write(1, va_arg(ap, int), 1));
+	return (_putchar(va_arg(ap, int)));
 }
 
 /**
@@ -24,7 +23,7 @@ int print_string(va_list ap)
 	if (!str)
 		str = "(null)";
 	while (str[count] != '\0')
-		count += write(1, str[count], 1);
+		count += _putchar(str[count]);
 
 	return (count);
 }
