@@ -11,6 +11,10 @@ int main(void)
 	int a = 0;
 	int b = 0;
 
+	a = _printf("ours %    s", "cat");
+	b = printf("stdio %    s", "cat");
+	printf("(%d, %d)\n", a, b);
+
 	a = _printf("ours %d%    %", 42);
 	b = printf("stdio %d%    %", 42);
 	printf("(%d, %d)\n", a, b);
@@ -27,12 +31,12 @@ int main(void)
 	b = printf("stdio %y%");
 	printf("(%d, %d)\n", a, b);
 
-	a = _printf("ours %    s");
-	b = printf("stdio %    s");
-	printf("(%d, %d)\n", a, b);
-
 	a = _printf("ours %   %", 0);
 	b = printf("stdio %   %", 0);
+	printf("(%d, %d)\n", a, b);
+
+	a = _printf("ours %   w");
+	b = printf("stdio %   w");
 	printf("(%d, %d)\n", a, b);
 
 	/* Fixed! */

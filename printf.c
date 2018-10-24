@@ -81,15 +81,12 @@ int print_space(va_list ap)
 		if (ch == funcs[i].spec[0])
 		{
 			count += funcs[i].fn(ap);
-			i++;
+			return (count);
 		}
-		else
-		{
-			count += _putchar('%');
-			count += _putchar(' ');
-			count += _putchar(ch);
-		}
-		return (count);
+		i++;
 	}
+	count += _putchar('%');
+	count += _putchar(' ');
+	count += _putchar(ch);
 	return (count);
 }
