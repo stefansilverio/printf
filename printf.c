@@ -1,6 +1,5 @@
-#include <stdarg.h> /* va_list, va_start, va_arg, va_end macros */
-#include <stdlib.h> /* NULL macro */
-#include "holberton.h" /* _putchar */
+#include "holberton.h"
+#include "funcs_array.h"
 
 /**
  * _printf - prints to stdout according to a format string
@@ -11,14 +10,7 @@ int _printf(const char *format, ...)
 {
 	int i, count = 0;
 	va_list ap;
-	print_t funcs[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"d", print_int},
-		{"i", print_int},
-		{"u", print_unsigned},
-		{NULL, NULL}
-	};
+
 	va_start(ap, format);
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
 	{
@@ -37,20 +29,42 @@ int _printf(const char *format, ...)
 		case 'd':
 		case 'i':
 		case 'u':
-			count += call_print_fn(format[i], funcs, ap);
+		case 'o':
+			count += call_print_fn(format[i], ap);
 			break;
 		default:
-			if (format[i] >= 7 && format[i] <= 13)
-			{
-				count += _putchar('%');
-				count += _putchar(format[i]);
-				break;
-			}
-			return (-1);
+			if (!format[i])
+				return (-1);
+			count += _putchar('%');
+			count += _putchar(format[i]);
+			break;
 		}
 	}
 	if (format == NULL)
 		return (-1);
 	va_end(ap);
+	return (count);
+}
+
+
+/**
+ * call_print_fn - call appropriate print fn
+ * @ch: format string character
+ * @ap: object to be printed
+ * Return: number of characters printed
+ */
+int call_print_fn(char ch, va_list ap)
+{
+	int j;
+	int count = 0;
+
+	for (j = 0; funcs[j].spec != NULL; j++)
+	{
+		if (ch == funcs[j].spec[0])
+		{
+			count += funcs[j].fn(ap);
+			break;
+		}
+	}
 	return (count);
 }
