@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <unistd.h>
+#include "holberton.h"
 
 /**
  * print_char - prints a char parameter from a va_list
@@ -27,4 +28,30 @@ int print_string(va_list ap)
 		count += write(1, str[count], 1);
 
 	return (count);
+}
+
+int print_space(va_list ap)
+{
+	char ch = va_arg(ap, int);
+	int count;
+	int i;
+
+	while (ch == ' ')
+		ch = va_arg(ap, int);
+
+	while (funcs[i].spec[0] != NULL)
+	{
+		if (ch == funcs[i].specs[0])
+		{
+			count += funcs[i].fn(ap);
+			i++;
+		}
+		else
+		{
+			count += _putchar('%');
+			count += _putchar(' ');
+			count += _putchar(ch);
+		}
+		return (count);
+	}
 }
