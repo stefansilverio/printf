@@ -49,6 +49,8 @@ int _printf(const char *format, ...)
 			return (-1);
 		}
 	}
+	if (format == NULL)
+		return (-1);
 	va_end(ap);
 	return (count);
 }
