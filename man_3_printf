@@ -37,7 +37,7 @@ s -  The const char * argument is expected to be a pointer to an array of charac
 
 .SH EXAMPLE
 .br
-Print a string litteral:
+Print a string literal:
 .br
 int a = 0;
 .br
@@ -51,7 +51,7 @@ return (0);
 .br
 .SS General Formatting:
 .br
-_printf("example format string [ % [ (c) (s) (d) (i) ]]", [variable] [string litteral)
+_printf("example format string [ % [ (c) (s) (d) (i) ]]", [variable] [string literal)
 .br
 .SH SEE ALSO
 printf(1), asprintf(3), dprintf(3), scanf(3)
@@ -62,4 +62,4 @@ No known bugs.
 .br
 This page was produced is collaboration with Roc-A-Fella Records. A description of the project can be found at jada jada jada.
 .SH AUTHOR
-.B Fernando Gonzalez-Morales and Stefan Silverio
+.B Fernando Gonzalez-Morales and Stef Silverio
