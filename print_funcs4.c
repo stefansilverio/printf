@@ -1,6 +1,4 @@
-#include <stdarg.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include "holberton.h"
 
 /**
  * print_unsigned - prints an unsigned int from va_list
@@ -36,7 +34,7 @@ int print_unsigned_digit(unsigned int num, int *count)
 	if (num / 10)
 		print_unsigned_digit(num / 10, count);
 
-	(*count) += write(1, &((num % 10) + '0'), 1);
+	(*count) += _putchar((num % 10) + '0');
 	return (*count);
 }
 
@@ -75,6 +73,6 @@ int print_digit_octal(unsigned int num, int *count)
 	if (num / 8)
 		print_digit_octal(num / 8, count);
 
-	(*count) += write(1, &((num % 8) + '0'), 1);
+	(*count) += _putchar((num % 8) + '0');
 	return (*count);
 }
