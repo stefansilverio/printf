@@ -46,7 +46,7 @@ int print_digit(int num, int *count)
 		}
 		else
 		{
-			(*count) += write('-');
+			(*count) += _putchar('-');
 			num = -num;
 		}
 	}
