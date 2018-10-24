@@ -1,5 +1,5 @@
-#ifndef _FUNCS_ARRAY_
-#define _FUNCS_ARRAY_
+#ifndef __FUNCS_ARRAY_H__
+#define __FUNCS_ARRAY_H__
 print_t funcs[] = {
 	{"c", print_char},
 	{"s", print_string},
@@ -10,4 +10,4 @@ print_t funcs[] = {
 	{" ", print_space},
 	{NULL, NULL}
 };
-#endif /* _FUNCS_ARRAY_ */
+#endif /* __FUNCS_ARRAY_H__ */
