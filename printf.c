@@ -67,3 +67,29 @@ int call_print_fn(char ch, va_list ap)
 	}
 	return (count);
 }
+int print_space(va_list ap)
+{
+	char ch = va_arg(ap, int);
+	int count = 0;
+	int i = 0;
+
+	while (ch == ' ')
+		ch = va_arg(ap, int);
+
+	while (funcs[i].spec != NULL)
+	{
+		if (ch == funcs[i].spec[0])
+		{
+			count += funcs[i].fn(ap);
+			i++;
+		}
+		else
+		{
+			count += _putchar('%');
+			count += _putchar(' ');
+			count += _putchar(ch);
+		}
+		return (count);
+	}
+	return (count);
+}
