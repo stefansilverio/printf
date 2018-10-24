@@ -1,6 +1,9 @@
 #ifndef __HOLBERTON_H__
 #define __HOLBERTON_H__
 
+#include <stdarg.h>
+#include <stdlib.h>
+
 /**
  * struct printer - format printer struct
  * @spec: the format specifier
@@ -19,8 +22,10 @@ int print_char(va_list ap);
 int print_string(va_list ap);
 int print_int(va_list ap);
 int print_unsigned(va_list ap);
+int print_octal(va_list ap);
 int print_digit(int num, int *count);
 int print_digit_unsigned(unsigned int num, int *count);
+int print_digit_octal(unsigned int num, int *count);
 int call_print_fn(char ch, print_t funcs[], va_list ap);
 
 #endif
