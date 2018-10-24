@@ -36,7 +36,7 @@ int print_digit(int num, int *count)
 	{
 		if (num == INT_MIN)
 		{
-			(*count) += write(1, '-', 1);
+			(*count) += _putchar('-');
 			num++;
 			num = -num;
 			if (num / 10)
