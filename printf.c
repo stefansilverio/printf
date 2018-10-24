@@ -45,15 +45,7 @@ int _printf(const char *format, ...)
 			count += _putchar('%');
 			count += _putchar(format[i]);
 			break;
-/*		default:
-			if (format[i] >= 7 && format[i] <= 13)
-			{
-				count += _putchar('%');
-				count += _putchar(format[i]);
-				break;
-			}
-			return (-1);
-*/		}
+		}
 	}
 	va_end(ap);
 	return (count);
