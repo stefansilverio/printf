@@ -1,5 +1,6 @@
 #include <limits.h>
-#include "holberton.h"
+#include <stdarg.h>
+#include <stdlib.h>
 
 /**
  * print_int - prints an integer from va_list
@@ -36,23 +37,23 @@ int print_digit(int num, int *count)
 	{
 		if (num == INT_MIN)
 		{
-			(*count) += _putchar('-');
+			(*count) += write(1, '-', 1);
 			num++;
 			num = -num;
 			if (num / 10)
 				print_digit(num / 10, count);
-			(*count) += _putchar((num % 10) + 1 + '0');
+			(*count) += write(1, (num % 10) + 1 + '0', 1);
 			return (*count);
 		}
 		else
 		{
-			(*count) += _putchar('-');
+			(*count) += write('-');
 			num = -num;
 		}
 	}
 	if (num / 10)
 		print_digit(num / 10, count);
 
-	(*count) += _putchar((num % 10) + '0');
+	(*count) += write(1, (num % 10) + '0', 1);
 	return (*count);
 }
