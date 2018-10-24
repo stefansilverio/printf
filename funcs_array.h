@@ -7,6 +7,7 @@ print_t funcs[] = {
 	{"i", print_int},
 	{"u", print_unsigned},
 	{"o", print_octal},
+	{" ", print_space},
 	{NULL, NULL}
 };
 #endif /* _FUNCS_ARRAY_ */
