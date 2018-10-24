@@ -19,6 +19,7 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list ap);
 int print_string(va_list ap);
+int print_space(va_list ap);
 int print_int(va_list ap);
 int print_unsigned(va_list ap);
 int print_octal(va_list ap);
