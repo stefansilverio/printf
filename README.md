@@ -1,7 +1,7 @@
 # 0x10 - C - printf
 
 ## DESCRIPTION
-First Holberton School group project in the Low Level Programming track.
+Custom printf standard library function. The function acts like printf and handles strings, chars, signed and unsigned integers, binary, and octal.
 
 #### Function prototype
 ```
